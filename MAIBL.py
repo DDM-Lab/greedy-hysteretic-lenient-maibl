@@ -128,7 +128,7 @@ class IBLAgent_td(Agent):
 			o = (y, x, holding, a)
 			if o in self.instance_history:
 				p = self.CompProbability(t,o)
-				result = outcomes[a]*p[0] + (1-p[1])*self.default_utility
+				result = outcomes[a]*p[0] + p[1]*self.default_utility
 				blends.append((result,i))
 			else:
 				blends.append((self.default_utility,i))
